@@ -1,0 +1,14 @@
+sources:
+  - name: erp
+    description: asdasdasdsd
+    database: fea25_05
+    schema: raw_adventure_works
+    tables:
+      - name: sales_salesorderheader
+        description: asda
+        columns:
+          - name: salesorderid
+            data_tests:
+              - unique
+              - not_null
+      
