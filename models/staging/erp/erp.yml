@@ -11,4 +11,74 @@ sources:
             data_tests:
               - unique
               - not_null
-      
+      - name: sales_salesorderdetail
+        description: asda
+        data_tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - salesorderid
+              - salesorderdetailid
+      - name: production_product
+        description: asddd
+        columns:
+          - name: productid  
+            data_tests:
+              - unique
+              - not_null
+      - name: sales_customer
+        description: asdfff
+        columns:
+          - name: customerid
+            data_tests:
+              - unique
+              - not_null
+      - name: person_person
+        description: gaasd
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
+      - name: sales_salesorderheadersalesreason
+        description: ggadas
+        data_tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - salesorderid
+              - salesreasonid
+      - name: sales_salesreason
+        description: asgggas
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
+      - name: sales_creditcard
+        description: asdgfqw
+        columns:
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null
+      - name: person_address
+        description: asdgtr
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
+      - name: person_stateprovince
+        description: aspapwoasid
+        columns:
+          - name: stateprovinceid
+            data_tests:
+              - unique
+              - not_null
+      - name: person_countryregion
+        description: asdfioojas
+        columns:
+          - name: countryregioncode
+            data_tests:
+              - unique
+              - not_null
+              
