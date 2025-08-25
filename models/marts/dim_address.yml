@@ -1,0 +1,10 @@
+models:
+  - name: dim_address
+    description: >
+      asdasdasd
+    columns:
+      - name: address_pk
+        description: Unique identifier for each customer.
+        tests:
+          - unique
+          - not_null

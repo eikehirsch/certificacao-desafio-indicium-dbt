@@ -1,5 +1,5 @@
 with 
-    source_sales_salesorderdetail as (
+    source_salesorderdetail as (
     select * 
     from {{ source('erp', 'sales_salesorderdetail') }}
 ),
@@ -13,7 +13,7 @@ renamed as (
         , cast(unitprice as numeric(18,4)) as unitprice
         , cast(unitpricediscount as numeric(18,2)) as unitpricediscount
         , cast(orderqty as int) as orderqty
-    from source_sales_salesorderdetail
+    from source_salesorderdetail
 )
 
 select * from renamed

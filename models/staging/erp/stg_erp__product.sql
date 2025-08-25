@@ -1,5 +1,5 @@
 with 
-    source_production_product as (
+    source_product as (
     select * 
     from {{ source('erp', 'production_product') }}
 ),
@@ -16,7 +16,7 @@ renamed as (
         , cast(name as varchar) as product_name
         , cast(productnumber as varchar) as product_number
         , cast(productline as varchar) as productline
-    from source_production_product
+    from source_product
 )
 
 select * from renamed
