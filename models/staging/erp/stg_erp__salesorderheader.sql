@@ -1,5 +1,5 @@
 with 
-    source_sales_salesorderheader as (
+    source_salesorderheader as (
     select * 
     from {{ source('erp', 'sales_salesorderheader') }}
 
@@ -25,7 +25,7 @@ renamed as (
         , cast(status as int) as status
         , cast(onlineorderflag as boolean) as onlineorderflag
         , cast(purchaseordernumber as varchar) as purchaseordernumber
-    from source_sales_salesorderheader
+    from source_salesorderheader
 )
 
 select * from renamed

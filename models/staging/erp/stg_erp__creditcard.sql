@@ -1,5 +1,5 @@
 with 
-    source_sales_creditcard as (
+    source_creditcard as (
     select * 
     from {{ source('erp', 'sales_creditcard') }}
 ),
@@ -12,7 +12,7 @@ renamed as (
         , cast(expmonth as int) as expmonth
         , cast(expyear as int) as expyear
 
-    from source_sales_creditcard
+    from source_creditcard
 )
 
 select * from renamed

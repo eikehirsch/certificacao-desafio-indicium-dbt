@@ -1,5 +1,5 @@
 with 
-    source_person_address as (
+    source_address as (
     select * 
     from {{ source('erp', 'person_address') }}
 ),
@@ -10,8 +10,8 @@ renamed as (
         , cast(stateprovinceid as int) as stateprovince_fk
         , cast(addressline1 as varchar) as addressline1
         , cast(addressline2 as varchar) as addressline2
-        , cast(city as varchar) as city
-    from source_person_address
+        , cast(city as varchar) as city_name
+    from source_address
 )
 
 select * from renamed

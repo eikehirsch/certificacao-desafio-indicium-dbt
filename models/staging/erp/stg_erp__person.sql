@@ -1,5 +1,5 @@
 with 
-    source_person_person as (
+    source_person as (
     select * 
     from {{ source('erp', 'person_person') }}
 ),
@@ -13,7 +13,7 @@ renamed as (
         , cast(lastname as varchar) as lastname
         , cast(emailpromotion as int) as emailpromotion
         , cast(additionalcontactinfo as varchar) as additionalcontactinfo
-    from source_person_person
+    from source_person
 )
 
 select * from renamed
