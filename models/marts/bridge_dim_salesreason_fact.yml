@@ -1,0 +1,10 @@
+models:
+  - name: bridge_dim_salesreason_fact
+    description: >
+      asdasdasd
+    columns:
+      - name: sales_order_header_reason_sk
+        description: Unique identifier for each customer.
+        tests:
+          - unique
+          - not_null
