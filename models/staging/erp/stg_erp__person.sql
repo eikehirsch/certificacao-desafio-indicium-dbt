@@ -12,7 +12,6 @@ renamed as (
         , cast(middlename as varchar) as middlename
         , cast(lastname as varchar) as lastname
         , cast(emailpromotion as int) as emailpromotion
-        , cast(additionalcontactinfo as varchar) as additionalcontactinfo
     from source_person
 )
 

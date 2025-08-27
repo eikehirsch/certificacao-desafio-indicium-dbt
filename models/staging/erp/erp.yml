@@ -32,6 +32,13 @@ sources:
             data_tests:
               - unique
               - not_null
+      - name: sales_store
+        description: asdfff
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
       - name: person_person
         description: gaasd
         columns:
