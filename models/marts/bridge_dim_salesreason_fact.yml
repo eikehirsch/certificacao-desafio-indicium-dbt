@@ -1,7 +1,6 @@
 models:
   - name: bridge_dim_salesreason_fact
-    description: >
-      asdasdasd
+    description: A table that serves as an intermediate table between fact_sales and dim_salesreason.
     columns:
       - name: order_header_sales_reason_sk
         description: Unique identifier for each customer.

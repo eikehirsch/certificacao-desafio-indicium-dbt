@@ -1,7 +1,7 @@
 models:
   - name: dim_address
     description: >
-      asdasdasd
+      A table that lists and details sales-related addresses (such as shipping and billing), including city, state/province, and country names.
     columns:
       - name: address_pk
         description: Unique identifier for each customer.

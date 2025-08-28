@@ -1,105 +1,109 @@
 sources:
   - name: erp
-    description: asdasdasdsd
+    description: >
+      This source references the RAW_ADVENTURE_WORKS schema within the FEA25_05 database hosted on Snowflake. It contains data related to 
+      sales operations from the Adventure Works company, sourced from its internal database, which includes multiple schemas such as Person,
+      Sales, and Product.
     database: fea25_05
     schema: raw_adventure_works
     tables:
       - name: sales_salesorderheader
-        description: asda
+        description: A table that lists and details customer orders, including columns such as order dates and monetary values.
         columns:
           - name: salesorderid
             data_tests:
               - unique
               - not_null
       - name: sales_salesorderdetail
-        description: asda
+        description: A table that lists and details order items, including columns such as unit price, and quantity of products purchased.
         data_tests:
         - dbt_utils.unique_combination_of_columns:
             combination_of_columns:
               - salesorderid
               - salesorderdetailid
       - name: production_product
-        description: asddd
+        description: A table that lists and details products, including columns such as product name and discontinued date.
         columns:
           - name: productid  
             data_tests:
               - unique
               - not_null
       - name: production_productsubcategory
-        description: asddddd
+        description: A table that lists and details product subcategories, including columns such as subcategory name.
         columns:
-          - name: productsubcategoryid  
+          - name: productsubcategoryid
             data_tests:
               - unique
               - not_null
       - name: production_productcategory
-        description: asddddddsa
+        description: A table that lists and details product categories, including columns such as category name.
         columns:
           - name: productcategoryid  
             data_tests:
               - unique
               - not_null
       - name: sales_customer
-        description: asdfff
+        description: A table that lists customers — either individuals or companies — with columns consisting solely of foreign keys.
         columns:
           - name: customerid
             data_tests:
               - unique
               - not_null
       - name: sales_store
-        description: asdfff
+        description: A table that lists and details stores associated with customers, including columns such as store name.
         columns:
           - name: businessentityid
             data_tests:
               - unique
               - not_null
       - name: person_person
-        description: gaasd
+        description: A table that lists and details individuals (such as customers, employees, etc.), including columns like person name and type.
         columns:
           - name: businessentityid
             data_tests:
               - unique
               - not_null
       - name: sales_salesorderheadersalesreason
-        description: ggadas
+        description: > 
+          A table that serves as an intermediate table between sales_salesorderheader and sales_salesreason, representing a 1:N and N:1 relationship, 
+          respectively.
         data_tests:
         - dbt_utils.unique_combination_of_columns:
             combination_of_columns:
               - salesorderid
               - salesreasonid
       - name: sales_salesreason
-        description: asgggas
+        description: A table listing the main reasons or factors that contributed to a sale, categorized by reason type such as Marketing, Promotion, or Other.
         columns:
           - name: salesreasonid
             data_tests:
               - unique
               - not_null
       - name: sales_creditcard
-        description: asdgfqw
+        description: A table that lists and details credit cards, including columns such as credit card type.
         columns:
           - name: creditcardid
             data_tests:
               - unique
               - not_null
       - name: person_address
-        description: asdgtr
+        description: A table that lists and details addresses, including columns such as address lines and city name.
         columns:
           - name: addressid
             data_tests:
               - unique
               - not_null
       - name: person_stateprovince
-        description: aspapwoasid
+        description: A table that lists and details state or province information for addresses, including columns such as state name.
         columns:
           - name: stateprovinceid
             data_tests:
               - unique
               - not_null
       - name: person_countryregion
-        description: asdfioojas
+        description: A table that lists and details countries associated with addresses, including columns such as country name.
         columns:
           - name: countryregioncode
             data_tests:
               - unique
               - not_null
-              

@@ -1,7 +1,7 @@
 models:
   - name: dim_creditcard
     description: >
-      asdasdasd
+      A table that lists and details credit cards, including information such as credit card type.
     columns:
       - name: creditcard_pk
         description: Unique identifier for each customer.
