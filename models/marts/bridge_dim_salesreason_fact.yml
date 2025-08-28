@@ -3,7 +3,7 @@ models:
     description: >
       asdasdasd
     columns:
-      - name: sales_order_header_reason_sk
+      - name: order_header_sales_reason_sk
         description: Unique identifier for each customer.
         tests:
           - unique

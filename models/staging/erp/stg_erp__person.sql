@@ -1,18 +1,14 @@
 with 
-    source_person as (
-    select * 
-    from {{ source('erp', 'person_person') }}
-),
-
-renamed as (
-    select
-        cast(businessentityid as int) as person_pk
-        , cast(persontype as varchar) as persontype
-        , cast(firstname as varchar) as firstname
-        , cast(middlename as varchar) as middlename
-        , cast(lastname as varchar) as lastname
-        , cast(emailpromotion as int) as emailpromotion
-    from source_person
-)
+    person as (
+        select * 
+        from {{ source('erp', 'person_person') }}
+    )
+    , renamed as (
+        select
+            cast(businessentityid as int) as person_pk
+            , cast(persontype as varchar) as persontype
+            , firstname || ' ' || lastname AS person_full_name
+        from person
+    )
 
 select * from renamed
