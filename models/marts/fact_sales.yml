@@ -1,7 +1,9 @@
 models:
   - name: fact_sales
     description: >
-      ggdsfaadasd
+      A fact table at the order item granularity level that contains detailed information about orders. This table includes foreign keys for 
+      joining with dimension tables, date columns (e.g., order date), metrics (such as freight per item and gross total), and descriptive attributes 
+      like whether the order was placed online. The fact table is derived from a join between the order header and order detail tables.
     columns:
       - name: order_item_sk
         description: Unique identifier for each customer.

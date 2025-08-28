@@ -1,7 +1,7 @@
 models:
   - name: dim_salesreason
     description: >
-      asdasdasd
+      A table listing the main reasons or factors that contributed to a sale, categorized by reason type such as Marketing, Promotion, or Other.
     columns:
       - name: salesreason_pk
         description: Unique identifier for each customer.

@@ -1,7 +1,8 @@
 models:
   - name: dim_product
     description: >
-      asdasdasd
+      A table that lists and details products, including information such as product name, subcategory and category names, weight, and discontinued 
+      date (if applicable).
     columns:
       - name: product_pk
         description: Unique identifier for each customer.

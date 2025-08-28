@@ -1,7 +1,8 @@
 models:
   - name: dim_customer
     description: >
-      asdasdasd
+      A table that lists and details customers, including information such as the person's full name and the store name (in case the order was placed 
+      by a company). If both fields contain values, it indicates that the purchase was made by a company through a representative.
     columns:
       - name: customer_pk
         description: Unique identifier for each customer.
