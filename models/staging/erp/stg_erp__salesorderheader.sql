@@ -7,7 +7,7 @@ with
 
 renamed as (
     select
-        cast(salesorderid as int) as sales_salesorderheader_pk
+        cast(salesorderid as int) as orderheader_pk
         , cast(salespersonid as int) as salesperson_fk
         , cast(customerid as int) as customer_fk
         , cast(territoryid as int) as territory_fk
@@ -22,9 +22,9 @@ renamed as (
         , cast(taxamt as numeric(18,2)) as taxamt
         , cast(freight as numeric(18,2)) as freight
         , cast(totaldue as numeric(18,2)) as totaldue
+        , cast(salesorderid as int) as orderheader_number
         , cast(status as int) as status
         , cast(onlineorderflag as boolean) as onlineorderflag
-        , cast(purchaseordernumber as varchar) as purchaseordernumber
     from source_salesorderheader
 )
 

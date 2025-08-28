@@ -1,0 +1,10 @@
+models:
+  - name: fact_sales
+    description: >
+      ggdsfaadasd
+    columns:
+      - name: order_item_sk
+        description: Unique identifier for each customer.
+        tests:
+          - unique
+          - not_null
