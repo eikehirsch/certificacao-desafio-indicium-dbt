@@ -1,19 +1,17 @@
 with 
-    source_salesorderdetail as (
-    select * 
-    from {{ source('erp', 'sales_salesorderdetail') }}
-),
-
-renamed as (
-    select
-        {{ dbt_utils.generate_surrogate_key(['salesorderid', 'salesorderdetailid']) }} as order_item_sk
-        , cast(salesorderid as int) as order_fk
-        , cast(productid as int) as product_fk
-        , cast(specialofferid as int) as specialoffer_fk
-        , cast(unitprice as numeric(18,4)) as unitprice
-        , cast(unitpricediscount as numeric(18,2)) as unitpricediscount
-        , cast(orderqty as int) as orderqty
-    from source_salesorderdetail
-)
+    orderdetail as (
+        select * 
+        from {{ source('erp', 'sales_salesorderdetail') }}
+    )
+    , renamed as (
+        select
+            {{ dbt_utils.generate_surrogate_key(['salesorderid', 'salesorderdetailid']) }} as order_item_sk
+            , cast(salesorderid as int) as order_fk
+            , cast(productid as int) as product_fk
+            , cast(unitprice as numeric(18,4)) as unitprice
+            , cast(unitpricediscount as numeric(18,2)) as unitpricediscount
+            , cast(orderqty as int) as orderqty
+        from orderdetail
+    )
 
 select * from renamed

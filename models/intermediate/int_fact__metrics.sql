@@ -14,13 +14,11 @@ with
             orderdetails.order_item_sk
             , orderdetails.order_fk
             , orderdetails.product_fk
-            , orderdetails.specialoffer_fk
             , orderheader.salesperson_fk
             , orderheader.customer_fk
             , orderheader.territory_fk
             , orderheader.billtoaddress_fk
             , orderheader.shiptoaddress_fk
-            , orderheader.shipmethod_fk
             , orderheader.creditcard_fk
             , orderheader.orderdate
             , orderheader.duedate
@@ -43,13 +41,11 @@ with
             order_item_sk
             , order_fk
             , product_fk
-            , specialoffer_fk
             , salesperson_fk
             , customer_fk
             , territory_fk
             , billtoaddress_fk
             , shiptoaddress_fk
-            , shipmethod_fk
             , creditcard_fk
             , orderdate
             , duedate
