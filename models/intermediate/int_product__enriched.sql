@@ -16,12 +16,7 @@ with
     , joined as (
         select 
             product.product_pk
-            , product.subcategory_fk
-            , subcategory.category_fk
             , product.discontinueddate
-            , product.weight
-            , product.standardcost
-            , product.listprice
             , product.product_name
             , subcategory.subcategory_name
             , category.category_name
