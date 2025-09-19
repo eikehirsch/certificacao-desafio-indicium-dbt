@@ -54,7 +54,7 @@ with
             , unitpricediscount
             , orderqty
             , unitprice * orderqty as gross_total
-            , unitprice * orderqty - (1 - unitpricediscount) as net_total
+            , unitprice * (1 - unitpricediscount) * orderqty  as net_total
             , subtotal
             , taxamt
             , freight
