@@ -52,6 +52,10 @@ with
             , shipdate
             , unitprice
             , unitpricediscount
+            , case
+                when unitpricediscount > 0 then true
+                else false
+              end as had_discount
             , orderqty
             , unitprice * orderqty as gross_total
             , unitprice * (1 - unitpricediscount) * orderqty  as net_total
