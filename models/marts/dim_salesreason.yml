@@ -4,7 +4,13 @@ models:
       A table listing the main reasons or factors that contributed to a sale, categorized by reason type such as Marketing, Promotion, or Other.
     columns:
       - name: salesreason_pk
-        description: Unique identifier for each customer.
+        description: Unique identifier for each sales reason.
         tests:
           - unique
           - not_null
+        
+      - name: reason_name
+        description: The name of the sales reason.
+
+      - name: reasontype
+        description: The type (category) of the sales reason.

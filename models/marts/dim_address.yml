@@ -4,7 +4,22 @@ models:
       A table that lists and details sales-related addresses (such as shipping and billing), including city, state/province, and country names.
     columns:
       - name: address_pk
-        description: Unique identifier for each customer.
+        description: Unique identifier for each address.
         tests:
           - unique
           - not_null
+
+      - name: addressline1
+        description: The name of the street to which the address belongs.
+
+      - name: addressline2
+        description: Additional address information (e.g., street or unit), if applicable.
+
+      - name: city_name
+        description: The name of the city for the address.
+
+      - name: state_name
+        description: The name of the state or province for the address.
+
+      - name: country_name
+        description: The name of the country for the address.
