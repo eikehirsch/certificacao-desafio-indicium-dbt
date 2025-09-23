@@ -17,7 +17,6 @@ with
         select
             customer.customer_pk
             , customer.person_fk
-            , customer.territory_fk
             , customer.store_fk
             , store.salesperson_fk
             , person.persontype as person_type

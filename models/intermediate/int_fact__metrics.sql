@@ -16,7 +16,6 @@ with
             , orderdetails.product_fk
             , orderheader.salesperson_fk
             , orderheader.customer_fk
-            , orderheader.territory_fk
             , orderheader.billtoaddress_fk
             , orderheader.shiptoaddress_fk
             , orderheader.creditcard_fk
@@ -26,10 +25,7 @@ with
             , orderdetails.unitprice
             , orderdetails.unitpricediscount
             , orderdetails.orderqty
-            , orderheader.subtotal
-            , orderheader.taxamt
             , orderheader.freight
-            , orderheader.totaldue
             , orderheader.orderheader_number
             , orderheader.onlineorderflag
         from orderdetails
@@ -43,7 +39,6 @@ with
             , product_fk
             , salesperson_fk
             , customer_fk
-            , territory_fk
             , billtoaddress_fk
             , shiptoaddress_fk
             , creditcard_fk
@@ -59,14 +54,11 @@ with
             , orderqty
             , unitprice * orderqty as gross_total
             , unitprice * (1 - unitpricediscount) * orderqty  as net_total
-            , subtotal
-            , taxamt
             , freight
             , cast(
                 freight / count(*) over (partition by orderheader_number) 
                 as numeric(18,2)
             ) as freight_allocated
-            , totaldue
             , onlineorderflag
         from joined
     )

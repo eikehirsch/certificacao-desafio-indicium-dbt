@@ -1,3 +1,4 @@
+
 models:
   - name: fact_sales
     description: >
@@ -10,3 +11,86 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: customer_fk
+        description: Foreign key that will be used to relate this table to the dim_customer table.
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_pk
+
+      - name: product_fk
+        description: Foreign key that will be used to relate this table to the dim_product table.
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: product_pk
+
+      - name: billtoaddress_fk
+        description: >
+          Foreign key used to relate this table to the dim_address table. The address is linked to 
+          the location where the customer who placed the order was located.
+        tests:
+          - relationships:
+              to: ref('dim_address')
+              field: address_pk
+
+      - name: creditcard_fk
+        description: Foreign key that will be used to relate this table to the dim_creditcard table.
+        tests:
+          - relationships:
+              to: ref('dim_creditcard')
+              field: creditcard_pk
+
+      - name: order_fk
+        description: Identifier of the order that comes from the sales order header table.
+        tests:
+          - relationships:
+              to: ref('sales_salesorderheader')
+              field: orderheader_pk
+
+      - name: shiptoaddress_fk
+        description: >
+          Foreign key used to relate this table to the dim_address table. The address is linked to the 
+          location where the order was delivered.
+        tests:
+          - relationships:
+              to: ref('dim_address')
+              field: address_pk
+
+      - name: salesperson_fk
+        description: Foreign key that identifies the person representing the store customer.
+
+      - name: unitpricediscount
+        description: The percentage discount applied to the product price.
+        
+      - name: unitprice
+        description: The unit price of the product.
+
+      - name: shipdate
+        description: The date the order was shipped.
+
+      - name: orderdate
+        description: The date the order was placed.
+
+      - name: orderqty
+        description: The number of units of the product ordered.
+
+      - name: onlineorderflag
+        description: Indicates whether the order was placed online.
+
+      - name: had_discount
+        description: Indicates whether a discount was applied to the item.
+
+      - name: gross_total
+        description: Total amount before discount for the order item (unitprice * orderqty).
+
+      - name: net_total
+        description: >
+          Total amount after discount for the order item which is calculated by multiplying 
+          the unitpricediscount to the gross total.
+
+      - name: freight_allocated
+        description: >
+          Freight allocated per item, calculated by dividing the total freight amount by the 
+          total quantity of items in the order.

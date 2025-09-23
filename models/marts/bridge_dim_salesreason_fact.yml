@@ -3,7 +3,8 @@ models:
     description: A table that serves as an intermediate table between fact_sales and dim_salesreason.
     columns:
       - name: order_header_sales_reason_sk
-        description: Unique identifier for each customer.
+        description: > 
+          Unique identifier, a surrogate key resulting from the combination of salesorderid and salesreasonid.
         tests:
           - unique
           - not_null

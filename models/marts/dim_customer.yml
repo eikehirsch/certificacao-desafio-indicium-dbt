@@ -9,3 +9,21 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: person_fk
+        description: Foreign key used to link the stg_erp__person table with the stg_erp__customer table.
+        
+      - name: store_fk
+        description: Foreign key used to link the stg_erp__store table with the stg_erp__customer table.
+
+      - name: salesperson_fk
+        description: Foreign key that identifies the person representing the store customer.
+
+      - name: person_type
+        description: Indicates the business role or type of the person.
+
+      - name: person_full_name
+        description: The full name of the person, composed of the first and last name only.
+
+      - name: store_name
+        description: The name of the store client

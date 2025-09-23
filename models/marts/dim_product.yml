@@ -5,7 +5,19 @@ models:
       date (if applicable).
     columns:
       - name: product_pk
-        description: Unique identifier for each customer.
+        description: Unique identifier for each product.
         tests:
           - unique
           - not_null
+      
+      - name: discontinued_date
+        description: The date when the sales of the product were discontinued, if applicable.
+
+      - name: product_name
+        description: The name of the product.
+
+      - name: subcategory_name
+        description: The name of the product subcategory.
+        
+      - name: category_name
+        description: The name of the product category.
